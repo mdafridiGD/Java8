@@ -11,34 +11,34 @@ public class PreDefinerFunctionalInterfaces {
         List<String> fruits= Arrays.asList("Apple","Guava","Banana");
 
 //        Consumer Interface
-//        fruits.forEach( new Consumer<String>() {
-//            @Override
-//            public void accept(String fruit) {
-//                System.out.println("I love " + fruit);
-//            }
-//        });
+        fruits.forEach( new Consumer<String>() {
+            @Override
+            public void accept(String fruit) {
+                System.out.println("I love " + fruit);
+            }
+        });
 
 //        Function Interface
-//        List<String> upperCase = fruits.stream()
-//                .map(new Function<String, String>() {
-//                    @Override
-//                    public String apply(String s) {
-//                        return s.toUpperCase();
-//                    }
-//                }).collect(Collectors.toList());
-//
-//        System.out.println(upperCase);
+        List<String> upperCase = fruits.stream()
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(String s) {
+                        return s.toUpperCase();
+                    }
+                }).collect(Collectors.toList());
+
+        System.out.println(upperCase);
 
 //        Predicate Interface
-//        List<String> filtered=fruits.stream()
-//                .filter(new Predicate<String>() {
-//                    @Override
-//                    public boolean test(String s) {
-//                        if(s.startsWith("A"))return true;
-//                        else return false;
-//                    }
-//                }).collect(Collectors.toList());
-//        System.out.println(filtered);
+        List<String> filtered=fruits.stream()
+                .filter(new Predicate<String>() {
+                    @Override
+                    public boolean test(String s) {
+                        if(s.startsWith("A"))return true;
+                        else return false;
+                    }
+                }).collect(Collectors.toList());
+        System.out.println(filtered);
 
     }
 }

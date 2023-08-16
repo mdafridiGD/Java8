@@ -17,8 +17,8 @@ public class Main {
 
 
         //Default Methods
-TestDefaults testDefaults=new TestDefaults();
-testDefaults.print();
+//TestDefaults testDefaults=new TestDefaults();
+//testDefaults.print();
 
 
 //DefaultMethods n MultipleInheritance
