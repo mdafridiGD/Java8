@@ -1,4 +1,4 @@
-package TerminalShortCircuitMethod;
+package streamApi.terminalShortCircuitMethod;
 
 import java.util.OptionalInt;
 import java.util.stream.IntStream;

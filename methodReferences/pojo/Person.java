@@ -1,3 +1,5 @@
+package methodReferences.pojo;
+
 public class Person {
     private String name;
 
@@ -7,6 +9,14 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void getAge(){
+        System.out.println("Age of object of a particular type");
     }
 
     @Override

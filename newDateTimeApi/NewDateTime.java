@@ -1,3 +1,5 @@
+package newDateTimeApi;
+
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +10,7 @@ public class NewDateTime {
 
 
         // Old Date API
+
         Date oldDate = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -27,29 +30,43 @@ public class NewDateTime {
 
 
 //        new date time api methods
-        LocalDate currentDate = LocalDate.now();
+        LocalDate currentDate = LocalDate.of(2002,12,28);                //smart enough
+        System.out.println("Current Date: " + currentDate);
+
         LocalTime currentTime = LocalTime.now();
+        System.out.println("Current Time: " + currentTime);
+
+
         LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("Current Date-Time: " + currentDateTime);
+
+
+        LocalDateTime zoned=LocalDateTime.now(ZoneId.of("Asia/Kuwait"));
+        System.out.println("zoned time of Kuwait "+zoned);
 
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
-
-        Duration duration = Duration.ofMinutes(1);
-
-        Period period = Period.ofMonths(1);
-
-        Instant instant = Instant.now();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDateTime = currentDateTime.format(formatter);
-
-        System.out.println("Current Date: " + currentDate);
-        System.out.println("Current Time: " + currentTime);
-        System.out.println("Current Date-Time: " + currentDateTime);
         System.out.println("Zoned Date-Time: " + zonedDateTime);
+
+//      Duration is used for measuring time in terms of hours, minutes, seconds
+        Duration duration = Duration.ofMinutes(1);
         System.out.println("Duration: " + duration);
+
+//      Period is used for measuring time in terms of years, months, and days.
+        Period period = Period.ofMonths(1);
         System.out.println("Period: " + period);
+
+//       GMT
+        Instant instant = Instant.now();//
         System.out.println("Instant: " + instant);
+
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
         System.out.println("Formatted Date-Time: " + formattedDateTime);
+
+        LocalDateTime newDateTime = currentDateTime.withYear(2024).withMonth(6).withHour(15);
+        System.out.println(newDateTime);
+
 
     }
 }
